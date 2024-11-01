@@ -9,6 +9,24 @@
 #define VOL_UP KC_KB_VOLUME_UP
 #define VOL_DO KC_KB_VOLUME_DOWN
 
+// Key overrides
+const key_override_t ae_key_override = ko_make_basic(KC_RALT, KC_A, RALT_T(KC_Q));
+const key_override_t oe_key_override = ko_make_basic(KC_LALT, KC_O, RALT_T(KC_P));
+const key_override_t ue_key_override = ko_make_basic(KC_LALT, KC_U, RALT_T(KC_Y));
+
+// This globally defines all key overrides to be used
+const key_override_t *key_overrides[] = {
+	&ae_key_override,
+	&oe_key_override,
+	&ue_key_override
+};
+
+// Combos
+const uint16_t PROGMEM F_J_ESC[] = {KC_F, KC_J, COMBO_END};
+combo_t key_combos[] = {
+    COMBO(F_J_ESC, KC_ESC),
+};
+
 
 // LAYER 0
 // Left-hand home row mods
@@ -22,12 +40,6 @@
 #define ALT_K RALT_T(KC_K)
 #define CTL_L RCTL_T(KC_L)
 #define SFT_SC RSFT_T(KC_SCLN)
-
-// Combos
-const uint16_t PROGMEM F_J_ESC[] = {KC_F, KC_J, COMBO_END};
-combo_t key_combos[] = {
-    COMBO(F_J_ESC, KC_ESC),
-};
 
 
 // LAYER 1
