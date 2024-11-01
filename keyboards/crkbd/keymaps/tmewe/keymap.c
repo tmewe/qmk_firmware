@@ -4,6 +4,7 @@
 #define SPC_L1 MT(MO(1), KC_SPC)
 #define ENT_L1 MT(MO(1), KC_ENT)
 
+// LAYER 0
 // Left-hand home row mods
 #define SFT_A LSFT_T(KC_A)
 #define CTL_S LCTL_T(KC_S)
@@ -12,17 +13,29 @@
 
 // Right-hand home row mods
 #define GUI_J RGUI_T(KC_J)
-#define ALT_K LALT_T(KC_K)
+#define ALT_K RALT_T(KC_K)
 #define CTL_L RCTL_T(KC_L)
 #define SFT_SC RSFT_T(KC_SCLN)
+
+// Volume
+#define VOL_UP KC_KB_VOLUME_UP
+#define VOL_DO KC_KB_VOLUME_DOWN
+
+
+// LAYER 1
+// Left-hand brackets with home row mods
+#define SFT_CIR LSFT_T(KC_CIRC)
+#define CTL_LBR LCTL_T(KC_LBRC)
+#define ALT_LCB LALT_T(KC_LCBR)
+#define GUI_LPR LGUI_T(KC_LPRN)
 
 #ifdef LAYOUT_split_3x6_3_ex2
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_split_3x6_3_ex2(
   //,--------------------------------------------------------------.  ,--------------------------------------------------------------.
-       KC_TAB,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T, KC_LCTL,    KC_RCTL,    KC_Y,    KC_U,    KC_I,    KC_O,   KC_P,  KC_BSPC,
+       KC_TAB,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T, KC_LCTL,     VOL_UP,    KC_Y,    KC_U,    KC_I,    KC_O,   KC_P,  KC_BSPC,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-      KC_LCTL,   SFT_A,   CTL_S,   ALT_D,   GUI_F,    KC_G, KC_LALT,    KC_RALT,    KC_H,   GUI_J,   ALT_K,   CTL_L,  SFT_SC, KC_QUOT,
+      KC_BSPC,   SFT_A,   CTL_S,   ALT_D,   GUI_F,    KC_G, KC_LALT,     VOL_DO,    KC_H,   GUI_J,   ALT_K,   CTL_L,  SFT_SC, KC_QUOT,
   //|--------+--------+--------+--------+--------+--------+--------'  `--------+--------+--------+--------+--------+--------+--------|
       KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH,  KC_ESC,
   //|--------+--------+--------+--------+--------+--------+--------.  ,--------+--------+--------+--------+--------+--------+--------|
@@ -33,13 +46,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [1] = LAYOUT_split_3x6_3_ex2(
   //,--------------------------------------------------------------.  ,--------------------------------------------------------------.
-       KC_TAB,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5, KC_LCTL,    KC_RCTL,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0, KC_BSPC,
+      _______, KC_QUES, KC_AMPR,  KC_DLR, KC_PERC, KC_TILD, _______,    _______,    KC_6, KC_UNDS, KC_EXLM, KC_HASH, _______, _______,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-      KC_LCTL, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_LALT,    KC_RALT, KC_LEFT, KC_DOWN,   KC_UP,KC_RIGHT, XXXXXXX, XXXXXXX,
+      _______, SFT_CIR, CTL_LBR, ALT_LCB, GUI_LPR,  KC_EQL, _______,    _______, KC_LEFT, KC_DOWN,   KC_UP,KC_RIGHT, KC_MINS, _______,
   //|--------+--------+--------+--------+--------+--------+--------'  `--------+--------+--------+--------+--------+--------+--------|
-      KC_LSFT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+      _______, KC_PIPE, KC_RBRC, KC_RCBR, KC_RPRN,   KC_AT,                      _______, _______, _______, _______, _______, _______,
   //|--------+--------+--------+--------+--------+--------+--------.  ,--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LGUI, _______,  KC_SPC,     KC_ENT, _______, KC_RGUI
+                                          _______, _______, _______,    _______, _______, _______
                                       //`--------------------------'  `--------------------------'
   ),
 
