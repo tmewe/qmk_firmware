@@ -1,8 +1,14 @@
 #include QMK_KEYBOARD_H
 
+// GENERAL
 // Layer switches
 #define SPC_L1 MT(MO(1), KC_SPC)
 #define ENT_L1 MT(MO(1), KC_ENT)
+
+// Volume
+#define VOL_UP KC_KB_VOLUME_UP
+#define VOL_DO KC_KB_VOLUME_DOWN
+
 
 // LAYER 0
 // Left-hand home row mods
@@ -16,10 +22,6 @@
 #define ALT_K RALT_T(KC_K)
 #define CTL_L RCTL_T(KC_L)
 #define SFT_SC RSFT_T(KC_SCLN)
-
-// Volume
-#define VOL_UP KC_KB_VOLUME_UP
-#define VOL_DO KC_KB_VOLUME_DOWN
 
 
 // LAYER 1
@@ -47,14 +49,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------+--------'  `--------+--------+--------+--------+--------+--------+--------|
       CW_TOGG,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH,  KC_ESC,
   //|--------+--------+--------+--------+--------+--------+--------.  ,--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LGUI,  SPC_L1,  KC_SPC,     KC_ENT,  ENT_L1, KC_RGUI
+                                          KC_HYPR,  SPC_L1,   MO(2),      MO(2),  ENT_L1, KC_HYPR
                                       //`--------------------------'  `--------------------------'
 
   ),
 
   [1] = LAYOUT_split_3x6_3_ex2(
   //,--------------------------------------------------------------.  ,--------------------------------------------------------------.
-      _______, KC_QUES, KC_AMPR,  KC_DLR, KC_PERC, KC_TILD, _______,    _______,    KC_6, KC_UNDS, KC_EXLM, KC_HASH, _______, _______,
+      _______, KC_QUES, KC_AMPR,  KC_DLR, KC_PERC, KC_TILD, _______,    _______, _______, KC_UNDS, KC_EXLM, KC_HASH, _______, _______,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
       _______, SFT_CIR, CTL_LBR, ALT_LCB, GUI_LPR,  KC_EQL, _______,    _______, KC_LEFT, KC_DOWN,   KC_UP,KC_RIGHT, KC_MINS, _______,
   //|--------+--------+--------+--------+--------+--------+--------'  `--------+--------+--------+--------+--------+--------+--------|
