@@ -23,6 +23,12 @@
 #define CTL_L RCTL_T(KC_L)
 #define SFT_SC RSFT_T(KC_SCLN)
 
+// Combos
+const uint16_t PROGMEM F_J_ESC[] = {KC_F, KC_J, COMBO_END};
+combo_t key_combos[] = {
+    COMBO(F_J_ESC, KC_ESC),
+};
+
 
 // LAYER 1
 // Left-hand brackets with home row mods
