@@ -3,11 +3,8 @@
 // GENERAL
 // Layer switches
 #define SPC_L1 MT(MO(1), KC_SPC)
-#define ENT_L1 MT(MO(1), KC_ENT)
-
-// Volume
-#define VOL_UP KC_KB_VOLUME_UP
-#define VOL_DO KC_KB_VOLUME_DOWN
+#define ENT_L2 MT(MO(2), KC_ENT)
+#define BSPC_L2 MT(MO(2), KC_BSPC)
 
 // Key overrides
 const key_override_t ae_key_override = ko_make_basic(KC_RALT, KC_A, RALT_T(KC_Q));
@@ -61,13 +58,13 @@ combo_t key_combos[] = {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_split_3x6_3_ex2(
   //,--------------------------------------------------------------.  ,--------------------------------------------------------------.
-       KC_TAB,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T, KC_LCTL,     VOL_UP,    KC_Y,    KC_U,    KC_I,    KC_O,   KC_P,  KC_BSPC,
+       KC_ESC,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T, S(KC_H),    KC_VOLU,    KC_Y,    KC_U,    KC_I,    KC_O,   KC_P,  KC_BSPC,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-      KC_BSPC,   SFT_A,   CTL_S,   ALT_D,   GUI_F,    KC_G, KC_LALT,     VOL_DO,    KC_H,   GUI_J,   ALT_K,   CTL_L,  SFT_SC, KC_QUOT,
+       KC_TAB,   SFT_A,   CTL_S,   ALT_D,   GUI_F,    KC_G, S(KC_M),    KC_VOLD,    KC_H,   GUI_J,   ALT_K,   CTL_L,  SFT_SC, KC_QUOT,
   //|--------+--------+--------+--------+--------+--------+--------'  `--------+--------+--------+--------+--------+--------+--------|
       CW_TOGG,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH,  KC_ESC,
   //|--------+--------+--------+--------+--------+--------+--------.  ,--------+--------+--------+--------+--------+--------+--------|
-                                          KC_HYPR,  SPC_L1,   MO(2),      MO(2),  ENT_L1, KC_HYPR
+                                          KC_HYPR,  SPC_L1, BSPC_L2,     ENT_L2,  SPC_L1, KC_HYPR
                                       //`--------------------------'  `--------------------------'
 
   ),
