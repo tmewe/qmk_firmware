@@ -50,9 +50,9 @@ combo_t key_combos[] = {
 // LAYER 2
 // Left hand math symbols with home row mods
 #define SFT_MIN LSFT_T(KC_MINS)
-#define CTL_AST LCTL_T(KC_ASTR)
+#define CTL_AST LCTL_T(KC_PAST)
 #define ALT_SLS LALT_T(KC_SLSH)
-#define GUI_PLS LGUI_T(KC_PLUS)
+#define GUI_PLS LGUI_T(KC_PPLS)
 
 #ifdef LAYOUT_split_3x6_3_ex2
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -133,6 +133,32 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 };
 #endif
+
+// The basic keycode limitation with Mod-Tap can be worked around by intercepting it in process_record_user.
+// (https://docs.qmk.fm/mod_tap#changing-tap-function)
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case SFT_CIR:
+            if (record->tap.count && record->event.pressed) {
+                tap_code16(KC_CIRC);
+                return false;
+            }
+            break;
+        case ALT_LCB:
+            if (record->tap.count && record->event.pressed) {
+                tap_code16(KC_LCBR);
+                return false;
+            }
+            break;
+        case GUI_LPR:
+            if (record->tap.count && record->event.pressed) {
+                tap_code16(KC_LPRN);
+                return false;
+            }
+            break;
+    }
+    return true;
+}
 
 #ifdef ENCODER_MAP_ENABLE
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
