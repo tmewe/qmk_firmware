@@ -2,9 +2,9 @@
 
 // GENERAL
 // Layer switches
-#define SPC_L1 MT(MO(1), KC_SPC)
-#define ENT_L2 MT(MO(2), KC_ENT)
-#define BSPC_L2 MT(MO(2), KC_BSPC)
+#define SPC_L1 LT(1, KC_SPC)
+#define ENT_L2 LT(2, KC_ENT)
+#define BSPC_L2 LT(2, KC_BSPC)
 
 // Key overrides
 const key_override_t ae_key_override = ko_make_basic(KC_RALT, KC_A, RALT_T(KC_Q));
