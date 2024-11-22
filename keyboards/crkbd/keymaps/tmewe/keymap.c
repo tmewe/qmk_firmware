@@ -19,7 +19,7 @@ const key_override_t *key_overrides[] = {
 };
 
 // Combos
-const uint16_t PROGMEM F_J_ESC[] = {KC_F, KC_J, COMBO_END};
+const uint16_t PROGMEM F_J_ESC[] = {LGUI_T(KC_F), RGUI_T(KC_J), COMBO_END};
 combo_t key_combos[] = {
     COMBO(F_J_ESC, KC_ESC),
 };
