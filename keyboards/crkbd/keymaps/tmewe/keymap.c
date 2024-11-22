@@ -4,6 +4,8 @@
 // Layer switches
 #define SPC_L1 LT(1, KC_SPC)
 #define ENT_L2 LT(2, KC_ENT)
+#define ENT_SFT RSFT_T(KC_ENT)
+#define ESC_SFT LSFT_T(KC_ESC)
 #define BSPC_L2 LT(2, KC_BSPC)
 
 // Key overrides
@@ -63,7 +65,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------+--------'  `--------+--------+--------+--------+--------+--------+--------|
       CW_TOGG,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, _______,
   //|--------+--------+--------+--------+--------+--------+--------.  ,--------+--------+--------+--------+--------+--------+--------|
-                                          KC_HYPR,  SPC_L1, BSPC_L2,     ENT_L2,  SPC_L1, KC_HYPR
+                                          BSPC_L2,  SPC_L1, ESC_SFT,     ENT_SFT,  SPC_L1, ENT_L2
                                       //`--------------------------'  `--------------------------'
 
   ),
